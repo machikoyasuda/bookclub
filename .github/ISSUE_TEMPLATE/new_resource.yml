@@ -1,0 +1,105 @@
+name: Request to add a new resource
+description: Use this issue to request to add a new resource to Calitp.org
+title: "New resource request"
+labels:
+  - content
+  - resources
+body:
+  - type: dropdown
+    id: approval
+    validations:
+      required: true
+    attributes:
+      label: Approved?
+      description: Has your content (document and headline) been approved by @esquared415? If No, please allow 3-5 business days for review by Erika.
+      multiple: false
+      options:
+        - 'No'
+        - 'Yes'
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      description: The title is used in list views on the home page and [https://calitp.org/resources](https://calitp.org/resources)
+    validations:
+      required: true
+  - type: checkboxes
+    id: file-name-check-1
+    attributes: Did you start the filename with `Cal-ITP`?
+    options:
+      - label: Yes
+        required: true
+    - type: checkboxes
+    id: file-name-check-2
+    attributes: There are no spaces between words in the filename. The only characters in the filename are: letters, numbers, `-`, `.` and `_`.
+    options:
+      - label: Yes
+        required: true
+    - type: checkboxes
+    id: file-name-check-3
+    attributes:  There are no revision dates in filenames. Limit usage of revision numbers unless commonly understood and expected by audience.
+    description: Avoid: `report-june-2024.pdf`, `file-v1.3.pdf` (random files with versions devoid of context). OK: `GTFS-guidelines-v3.pdf` (v3 of the GTFS Guidelines, a well-know and ever-evolving document)
+    options:
+      - label: Yes
+        required: true
+  - type: input
+    id: link
+    attributes:
+      label: Asset URL
+      description: The URL of the resource
+      placeholder: ex. link to a PDF from Google Drive
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Category
+      description: What category is this resource in?
+      multiple: false
+      options:
+        - Case studies
+        - Fact sheets & overviews
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Tag
+      description: What tag is this resource in?
+      multiple: false
+      options:
+        - Contactless payments
+        - Benefits
+        - GTFS
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Date - Year
+      description: What year did this resource get published?
+      multiple: false
+      options:
+        - 2023
+        - 2022
+        - 2021
+        - 2020
+    validations:
+      required: true
+  - type: dropdown
+    attributes:
+      label: Date - Month
+      description: What month did this resource get published?
+      multiple: false
+      options:
+        - "01"
+        - "02"
+        - "03"
+        - "04"
+        - "05"
+        - "06"
+        - "07"
+        - "08"
+        - "09"
+        - "10"
+        - "11"
+        - "12"
+    validations:
+      required: true
